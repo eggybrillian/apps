@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Apps') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-100 font-sans">
@@ -33,6 +33,12 @@
                class="flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium
                {{ request()->routeIs('admin.products.*') ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-gray-700' }}">
                 Product
+            </a>
+
+            <a href="{{ route('admin.users.index') }}"
+                class="flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium
+                {{ request()->routeIs('admin.users.*') ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-gray-700' }}">
+                Users
             </a>
         </nav>
 

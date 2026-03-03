@@ -23,25 +23,25 @@
                     </a>
                 </div>
 
-                <table class="w-full text-sm text-left border">
+                <table class="table-fixed w-full text-sm text-left border">
                     <thead class="bg-gray-100">
                         <tr>
-                            <th class="px-4 py-2 border">#</th>
-                            <th class="px-4 py-2 border">Nama</th>
-                            <th class="px-4 py-2 border">Deskripsi</th>
-                            <th class="px-4 py-2 border">Harga</th>
-                            <th class="px-4 py-2 border">Stok</th>
-                            <th class="px-4 py-2 border">Aksi</th>
+                            <th class="w-10 px-4 py-2 border">#</th>
+                            <th class="w-48 px-4 py-2 border">Nama</th>
+                            <th class="w-72 px-4 py-2 border">Deskripsi</th>
+                            <th class="w-28 px-4 py-2 border">Harga</th>
+                            <th class="w-14 px-4 py-2 border">Stok</th>
+                            <th class="w-32 px-4 py-2 border">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse($products as $product)
                         <tr>
-                            <td class="px-4 py-2 border">{{ $loop->iteration }}</td>
-                            <td class="px-4 py-2 border">{{ $product->name }}</td>
-                            <td class="px-4 py-2 border">{{ $product->description }}</td>
-                            <td class="px-4 py-2 border">Rp {{ number_format($product->price, 0, ',', '.') }}</td>
-                            <td class="px-4 py-2 border">{{ $product->stock }}</td>
+                            <td class="text-center px-4 py-2 border">{{ $loop->iteration }}</td>
+                            <td class="whitespace-normal break-words px-4 py-2 border">{{ $product->name }}</td>
+                            <td class="whitespace-normal break-words px-4 py-2 border">{{ $product->description }}</td>
+                            <td class="text-right px-4 py-2 border">Rp {{ number_format($product->price, 0, ',', '.') }}</td>
+                            <td class="text-center px-4 py-2 border">{{ $product->stock }}</td>
                             <td class="px-4 py-2 border">
                                 <a href="{{ route('admin.products.edit', $product) }}"
                                    class="bg-yellow-400 text-white px-3 py-1 rounded text-xs">Edit</a>
